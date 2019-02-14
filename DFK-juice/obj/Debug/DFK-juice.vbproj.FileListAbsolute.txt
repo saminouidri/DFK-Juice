@@ -10,3 +10,15 @@ C:\Users\NouidriSa\AppData\Local\Temporary Projects\DFK-juice\obj\Debug\DFK-juic
 C:\Users\NouidriSa\AppData\Local\Temporary Projects\DFK-juice\obj\Debug\DFK-juice.exe
 C:\Users\NouidriSa\AppData\Local\Temporary Projects\DFK-juice\obj\Debug\DFK-juice.xml
 C:\Users\NouidriSa\AppData\Local\Temporary Projects\DFK-juice\obj\Debug\DFK-juice.pdb
+M:\DFK-Juice\DFK-juice\DFK-juice\bin\Debug\DFK-juice.exe.config
+M:\DFK-Juice\DFK-juice\DFK-juice\bin\Debug\DFK-juice.exe
+M:\DFK-Juice\DFK-juice\DFK-juice\bin\Debug\DFK-juice.pdb
+M:\DFK-Juice\DFK-juice\DFK-juice\bin\Debug\DFK-juice.xml
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.vbprojAssemblyReference.cache
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK_juice.Form1.resources
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK_juice.Resources.resources
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.vbproj.GenerateResource.cache
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.vbproj.CoreCompileInputs.cache
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.exe
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.xml
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.pdb
