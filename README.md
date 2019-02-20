@@ -3,7 +3,7 @@
 DFK-Juice is a simple C/C++ IDE made in VB.Net. It allows you to create, open and save and your C/C++ projects. 
 In order to compile and run your code, DFK-Juice uses MinGW/GCC.
 ## Installation :
-== [DOWNLOAD](https://drive.google.com/file/d/1lSmkON4w3ZMGlGBCPIIOmbnhHZFiSywe/view?usp=sharing)==
+== [DOWNLOAD]http://www.mediafire.com/file/c1xjer3gb70odor/DFK-Juice_V1.zip/file)==
 1. run the MinGW setup and install all modules
 2. run setup.bat
 3. run setup.exe / DFK-Juice.application
