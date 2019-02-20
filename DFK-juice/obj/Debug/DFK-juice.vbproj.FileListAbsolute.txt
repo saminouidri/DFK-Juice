@@ -22,3 +22,8 @@ M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.vbproj.CoreCompileInputs.ca
 M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.exe
 M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.xml
 M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.pdb
+M:\DFK-Juice\DFK-juice\DFK-juice\bin\Debug\DFK-juice.exe.manifest
+M:\DFK-Juice\DFK-juice\DFK-juice\bin\Debug\DFK-juice.application
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.TrustInfo.xml
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.exe.manifest
+M:\DFK-Juice\DFK-juice\DFK-juice\obj\Debug\DFK-juice.application

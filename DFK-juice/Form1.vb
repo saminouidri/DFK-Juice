@@ -1,18 +1,19 @@
 ﻿Imports System.Runtime.InteropServices 'for the API
 
 Public Class Form1
-
+    Dim GlobalPath As String
+    Dim GlobalCompile As String
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Process.Start("cmd", "/c g++ -o test M:\helloworld\main.c")
-        My.Computer.FileSystem.WriteAllText("M:\helloworld\main.c", RichTextBox1.Text, False)
+        Process.Start("cmd", "/c gcc -o output " + GlobalPath)
+        My.Computer.FileSystem.WriteAllText(GlobalPath, RichTextBox1.Text, False)
 
-        Shell("compile.bat")
+        Shell(GlobalCompile)
 
 
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
 
 
     End Sub
@@ -25,9 +26,9 @@ Public Class Form1
       printf('Hello world\n');
       return 0;
     }"
-        Timer1.Interval = 1000
-        Timer1.Enabled = True
-        Timer1.Start()
+
+
+
     End Sub
 
     Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
@@ -272,8 +273,72 @@ Public Class Form1
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-        WebBrowser1.Navigate("C:\")
+        WebBrowser1.GoBack()
     End Sub
 
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+        My.Computer.FileSystem.WriteAllText(GlobalPath, RichTextBox1.Text, False)
+    End Sub
 
+    Private Sub NewProjectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewProjectToolStripMenuItem.Click
+        Dim ProjectName As String
+        Dim Compile As String
+
+
+
+
+
+        ProjectName = InputBox("Enter project name (spaces not allowed) ...")
+        ProjectName = "C:\\" + ProjectName
+        My.Computer.FileSystem.CreateDirectory(ProjectName)
+        GlobalPath = ProjectName + "\main.c"
+        GlobalCompile = ProjectName + "\compile.bat"
+        Compile = "
+
+                   gcc -o run   " + GlobalPath + "
+                   
+                   run.exe
+
+                   set /p DUMMY=Hit ENTER to continue...
+
+                   del run.exe"
+
+
+
+        My.Computer.FileSystem.WriteAllText(ProjectName + "\compile.bat", Compile, False)
+
+        My.Computer.FileSystem.WriteAllText(ProjectName + "\main.c", RichTextBox1.Text, False)
+
+    End Sub
+
+    Private Sub OpenProjectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenProjectToolStripMenuItem.Click
+        MsgBox("Project Path cannot contain spaces!")
+        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
+        Dim path As String = OpenFileDialog1.FileName
+        Dim Compile2 As String
+        Dim path2 As String = path.Replace("main.c", "")
+
+        If result = Windows.Forms.DialogResult.OK Then
+
+            RichTextBox1.LoadFile(path, RichTextBoxStreamType.PlainText)
+            GlobalPath = path
+            GlobalCompile = path2 + "\compile.bat"
+            Compile2 = "
+
+                   gcc -o run   " + GlobalPath + "
+                   
+                   run.exe
+
+                   set /p DUMMY=Hit ENTER to continue...
+
+                   del run.exe"
+
+
+            Try
+                My.Computer.FileSystem.WriteAllText(path2 + "\compile.bat", Compile2, False)
+            Catch ex As Exception
+                MsgBox("Couldn't create compile.bat, Make sure project path doesn't already contain a compile.bat")
+            End Try
+        End If
+    End Sub
 End Class
