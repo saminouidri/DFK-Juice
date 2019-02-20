@@ -14,7 +14,7 @@ DFK-Juice was made using VB.Net, Visual Studio. We're using GCC as our compiler.
 
 ## Built With
 
-* [Visual Studio] (https://visualstudio.microsoft.com/en/vs/enterprise/)
+* [Visual Studio](https://visualstudio.microsoft.com/en/vs/enterprise/)
 * [GNU GCC](https://gcc.gnu.org/) - Compiler 
 
 
