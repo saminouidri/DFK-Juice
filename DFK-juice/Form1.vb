@@ -6,10 +6,13 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Process.Start("cmd", "/c gcc -o output " + GlobalPath)
-        My.Computer.FileSystem.WriteAllText(GlobalPath, RichTextBox1.Text, False)
+        Try
+            My.Computer.FileSystem.WriteAllText(GlobalPath, RichTextBox1.Text, False)
 
-        Shell(GlobalCompile)
-
+            Shell(GlobalCompile)
+        Catch ex5 As Exception
+            MsgBox("Couldn't run program", vbCritical)
+        End Try
 
     End Sub
 
@@ -30,14 +33,6 @@ Public Class Form1
 
 
     End Sub
-
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
-
-
-    End Sub
-
-
-
 
     Private Sub SyntaxHighlightingToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles SyntaxHighlightingToolStripMenuItem.Click
         Dim SearchText As String
@@ -277,7 +272,11 @@ Public Class Form1
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
-        My.Computer.FileSystem.WriteAllText(GlobalPath, RichTextBox1.Text, False)
+        Try
+            My.Computer.FileSystem.WriteAllText(GlobalPath, RichTextBox1.Text, False)
+        Catch ex2 As Exception
+            MsgBox("Couldn't save project", vbCritical)
+        End Try
     End Sub
 
     Private Sub NewProjectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewProjectToolStripMenuItem.Click
@@ -290,7 +289,11 @@ Public Class Form1
 
         ProjectName = InputBox("Enter project name (spaces not allowed) ...")
         ProjectName = "C:\\" + ProjectName
-        My.Computer.FileSystem.CreateDirectory(ProjectName)
+        Try
+            My.Computer.FileSystem.CreateDirectory(ProjectName)
+        Catch ex3 As Exception
+            MsgBox("Can't create directory on C: drive", vbCritical)
+        End Try
         GlobalPath = ProjectName + "\main.c"
         GlobalCompile = ProjectName + "\compile.bat"
         Compile = "
@@ -304,10 +307,13 @@ Public Class Form1
                    del run.exe"
 
 
+        Try
+            My.Computer.FileSystem.WriteAllText(ProjectName + "\compile.bat", Compile, False)
 
-        My.Computer.FileSystem.WriteAllText(ProjectName + "\compile.bat", Compile, False)
-
-        My.Computer.FileSystem.WriteAllText(ProjectName + "\main.c", RichTextBox1.Text, False)
+            My.Computer.FileSystem.WriteAllText(ProjectName + "\main.c", RichTextBox1.Text, False)
+        Catch ex4 As Exception
+            MsgBox("Couldn't write to compile.bat or main.c", vbCritical)
+        End Try
 
     End Sub
 
