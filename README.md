@@ -1,4 +1,4 @@
-![DFK](https://i.imgur.com/T3Q5des.png)
+![DFK](https://i.imgur.com/ckZSHI2.png)
 ## What is DFK-Juice?
 DFK-Juice is a simple C/C++ IDE made in VB.Net. It allows you to create, open and save and your C/C++ projects. 
 In order to compile and run your code, DFK-Juice uses MinGW/GCC.
